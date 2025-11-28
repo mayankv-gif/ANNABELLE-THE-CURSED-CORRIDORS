@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Annabelle: The Cursed Corridors — Self-contained Demo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="game">
+    <header>
+      <h1>ANNABELLE: THE CURSED CORRIDORS</h1>
+      <div class="hud">
+        <div id="level">Level 1 / 10</div>
+        <div id="timer">01:00</div>
+      </div>
+    </header>
+
+    <main id="room">
+      <!-- 3D corridor layers -->
+      <div id="corridor">
+        <div class="wall left"></div>
+        <div class="wall right"></div>
+        <div class="floor"></div>
+        <div class="ceiling"></div>
+        <div class="depth-layers" id="depthLayers"></div>
+      </div>
+
+      <!-- interactive elements -->
+      <div id="key" class="item hidden" title="Click to pick up the key">🔑</div>
+      <div id="door" class="item hidden" title="Click to exit">EXIT</div>
+      <div id="ghost" class="ghost hidden"></div>
+
+      <!-- canvas used for jumpscare (glitch face) -->
+      <canvas id="jumpscareCanvas" class="overlay hidden"></canvas>
+
+      <div id="uiOverlay" class="overlay hidden">
+        <div id="message">MESSAGE</div>
+        <div class="controls">
+          <button id="restart">Restart</button>
+          <button id="mute">🔊 Mute</button>
+          <button id="skip">Skip Level</button>
+        </div>
+      </div>
+
+      <!-- initial splash to get user gesture for audio -->
+      <div id="splash" class="overlay splash">
+        <h2>ANNABELLE: THE CURSED CORRIDORS</h2>
+        <p>Blood-red corridors. 10 levels. 1 minute each (level 5 & 10 = 2 minutes).</p>
+        <button id="startBtn">Start Game</button>
+      </div>
+    </main>
+
+    <footer>
+      <p class="small">This build generates all sounds & visuals procedurally. No external assets required.</p>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
